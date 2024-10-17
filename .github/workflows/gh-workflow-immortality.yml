@@ -19,3 +19,31 @@ jobs:
         with:
           secret: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           orgs: ${{ github.repository_owner }}
+
+      - name: Keep cronjob based triggers of GitHub workflows alive (forks)
+        uses: PhrozenByte/gh-workflow-immortality@v1
+        with:
+          secret: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repos: |
+            ${{ github.repository_owner }}/ansible-chrome
+            ${{ github.repository_owner }}/ansible-collectd
+            ${{ github.repository_owner }}/ansible-collectd-plugin-haproxy
+            ${{ github.repository_owner }}/ansible-composer
+            ${{ github.repository_owner }}/ansible-dns
+            ${{ github.repository_owner }}/ansible-docker
+            ${{ github.repository_owner }}/ansible-fail2ban
+            ${{ github.repository_owner }}/ansible-git-lfs
+            ${{ github.repository_owner }}/ansible-go
+            ${{ github.repository_owner }}/ansible-grafana
+            ${{ github.repository_owner }}/ansible-hostname
+            ${{ github.repository_owner }}/ansible-influxdb
+            ${{ github.repository_owner }}/ansible-jenkins
+            ${{ github.repository_owner }}/ansible-limits
+            ${{ github.repository_owner }}/ansible-memcached
+            ${{ github.repository_owner }}/ansible-netplan
+            ${{ github.repository_owner }}/ansible-network-interfaces
+            ${{ github.repository_owner }}/ansible-ntp
+            ${{ github.repository_owner }}/ansible-redis
+            ${{ github.repository_owner }}/ansible-swapfile
+            ${{ github.repository_owner }}/ansible-sysfs
+            ${{ github.repository_owner }}/ansible-timezone
